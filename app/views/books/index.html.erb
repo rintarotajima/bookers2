@@ -2,12 +2,22 @@
   <div class="row">
     <div class="col-md-3">
       <h2>User info</h2>
-      <h4>画像</h4>
+      <% if @user.profile_image.attached? %>
+          <%= image_tag url_for(@user.profile_image), class: "profile_image" %>
+　　　<% else %>
+          <%= image_tag "default-image.jpg", class: "profile_image" %>
+　　　<% end %>
       <table class="table">
         <tbody>
           <tr></tr>
-          <tr></tr>
-          <tr></tr>
+          <tr>
+            <th>name</th>
+            <th> <%= @user.name %></th>
+          </tr>
+          <tr>
+            <th>introduction</th>
+            <th><%= @user.introduction %></th>
+          </tr>
         </tbody>
       </table>
       <div class="row">
