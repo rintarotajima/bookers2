@@ -13,8 +13,10 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     if @book.save
+      flash[:sucess]="You created to book successfully"
       redirect_to book_path(@book)
     else
+      flash[:error]="Failed to create book"
       render :index
     end
   end
