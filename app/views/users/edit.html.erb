@@ -11,11 +11,9 @@
         <div id="error_explanation">
           <h3><%= pluralize(@user.errors.count, "error") %> prohabited this obj from being saved:</h3>
           <ul>
-            <% @user.errors.each do |attribute,　message| %>
+            <% @user.errors.full_messages.each do |message| %>
             <li>
-              <% if attribute == :name　&& message == "is too short (minimum is 2 characters)" %>
-                Name is too short (minimum is 2 characters)
-              <% end %>
+              <%= message %>
             </li>
             <% end %>
           </ul>
