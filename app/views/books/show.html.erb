@@ -13,7 +13,7 @@
                   <% else %>
                     <%= link_to(image_tag("default-image.jpg", class: "profile_image"), user_path(@book.user)) %>
                   <% end %><br>
-                  <%= link_to @user.name, user_path(@book.user) %>
+                  <%= link_to @book.user.name, user_path(@book.user) %>
                 </td>
                 <td>
                   <%=link_to @book.title, book_path(@book) %>
