@@ -22,7 +22,6 @@ class UsersController < ApplicationController
       flash[:success]= "You have updated user successfully."
       redirect_to @user
     else
-      flash.now[:error]="Failed to update profile"
       render 'edit'
     end
   end
