@@ -12,17 +12,17 @@
           </tr>
         </thead>
         <tbody>
-          <% @books.each do |book| %>
+          <% @users.each do |user| %>
           <tr>
             <td>
-              <% if @user.profile_image.attached? %>
-                  <%= link_to(image_tag(url_for(book.user.profile_image), class: "profile_image"), user_path(book.user)) %>
+              <% if user.profile_image.attached? %>
+                  <%= link_to(image_tag(url_for(user.profile_image), class: "profile_image"), user_path(user)) %>
                 <% else %>
-                  <%= link_to(image_tag("default-image.jpg", class: "profile_image"), user_path(book.user)) %>
+                  <%= link_to(image_tag("default-image.jpg", class: "profile_image"), user_path(user)) %>
                 <% end %>
             </td>
             <td>
-              <%= @user.name %>
+              <%= user.name %>
             </td>
             <td>
               <%= link_to "Show", user_path(current_user) %>

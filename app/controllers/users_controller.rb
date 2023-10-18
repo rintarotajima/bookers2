@@ -4,6 +4,7 @@ class UsersController < ApplicationController
    @books = Book.all
    @book = Book.new
    @user = current_user
+   @users = User.all
   end
 
   def show
@@ -13,6 +14,11 @@ class UsersController < ApplicationController
   end
 
   def edit
+    user_id = params[:id]
+    login_user_id = current_user.id
+    if(user_id != login_user_id)
+      redirect_to books_path
+    end
     @user = User.find(params[:id])
   end
 
