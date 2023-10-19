@@ -1,6 +1,6 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
-    <%= render 'books/list' %>
+    <%= render 'books/list',user: @user, book: @book %>
     <div class="col-md-8 offset-md-1">
       <h2>Users</h2>
       <table class="table">
@@ -16,7 +16,7 @@
           <tr>
             <td>
               <% if user.profile_image.attached? %>
-                  <%= link_to(image_tag(url_for(user.profile_image), class: "profile_image"), user_path(user)) %>
+                  <%= link_to(image_tag(url_for(user.profile_image), class: "profile_image",width: 100, height: 100), user_path(user)) %>
                 <% else %>
                   <%= link_to(image_tag("default-image.jpg", class: "profile_image"), user_path(user)) %>
                 <% end %>

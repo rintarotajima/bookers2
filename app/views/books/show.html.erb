@@ -1,15 +1,15 @@
 
 <div class="container">
     <div class="row">
-      <%= render 'books/list' %>
+      <%= render 'books/list',user: @user, book: @books %>
       <div class="col-md-8 offset-md-1">
         <h2>Book detail</h2>
         <table class="table table-hover table-inverse">
           <tbody>
               <tr>
                 <td>
-                  <% if @user.profile_image.attached? %>
-                    <%= link_to(image_tag(url_for(@book.user.profile_image), class: "profile_image"), user_path(@book.user)) %>
+                  <% if @book.user.profile_image.attached? %>
+                    <%= link_to(image_tag(url_for(@book.user.profile_image), class: "profile_image",width: 100, height: 100), user_path(@book.user)) %>
                   <% else %>
                     <%= link_to(image_tag("default-image.jpg", class: "profile_image"), user_path(@book.user)) %>
                   <% end %><br>
