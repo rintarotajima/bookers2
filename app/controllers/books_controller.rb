@@ -1,4 +1,7 @@
 class BooksController < ApplicationController
+
+  before_action :authenticate_user!, only: [:index, :show, :edit]
+
   def new
     @book = Book.new
   end
@@ -23,8 +26,9 @@ class BooksController < ApplicationController
   end
 
   def show
+    @book_new = Book.new
     @book = Book.find(params[:id])
-    @books = Book.new
+    @books = Book.all
     @user = current_user
   end
 
@@ -59,5 +63,6 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:title, :body)
   end
+
 
 end
