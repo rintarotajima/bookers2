@@ -1,24 +1,23 @@
-# README
+# DMM WEBCAMPコンテンツ 【アプリケーションを完成させよう2】研修課題3
+DMM WEBCAMPの学習コンテンツアプリケーションを完成させよう2の研修課題です．
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#使い方
+このアプリケーションはPCのブラウザで実行できます。以下に使い方の手順を説明します。
 
-Things you may want to cover:
+1.アプリケーションの起動
 
-* Ruby version
+アプリケーションを起動するためには、ターミナルを開き、プロジェクトのディレクトリに移動します。
 
-* System dependencies
+cd プロジェクトのディレクトリのパス
 
-* Configuration
+2.サーバーの起動
 
-* Database creation
+以下のコマンドを実行して、Railsサーバーを起動します。
 
-* Database initialization
+rails server
 
-* How to run the test suite
+サーバーが正常に起動するとブラウザでTop画面("/")にアクセスできるようになります。
 
-* Services (job queues, cache servers, search engines, etc.)
+3.アプリケーションの利用
 
-* Deployment instructions
-
-* ...
+ブラウザでTop画面("/")にアクセスすると、アプリケーションが表示されます。各ページや機能を利用する際は、画面上の指示に従ってください。
