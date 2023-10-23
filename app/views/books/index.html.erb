@@ -42,6 +42,9 @@
               <td>
                 <%= book.body %>
               </td>
+              <td>
+                <td><%= render "favorites/favorite", book: book %></td>
+              </td>
             </tr>
           <% end %>
         </tbody>
