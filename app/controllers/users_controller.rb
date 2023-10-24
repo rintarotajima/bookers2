@@ -48,12 +48,14 @@ class UsersController < ApplicationController
       redirect_to user_path(current_user)
     end
   end
-  
+
   def correct_user
     @user = User.find(params[:id])
-    unless 
+    unless
       @user = current_user.id
       redirect_to user_path(current_user)
+    end
+  
   end
-end
+
 end
