@@ -29,10 +29,11 @@
                <td>
                  <%= book.body %>
                <td>
+                   <%= render 'favorites/favorite', book: book%>
                </td>
-               </td>
-                   コメント数：<%= @user.book_comments.count %>
+              
                 <td>
+                    コメント数：<%= @user.book_comments.count %>
                 </td>
              </tr>
            <% end %>
